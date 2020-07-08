@@ -22,7 +22,7 @@ module Api
             end
 
             def update
-                
+
                 user = user.find(params[:id])
 
                 if user.update_attributes(user_params)
@@ -39,4 +39,3 @@ module Api
         end
     end
 end
-
