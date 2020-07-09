@@ -33,7 +33,7 @@ module Api
 
             private
             def score_params
-                params.require(:score).permit(:user_id, :score, :rows, :level)
+                params.require(:score).permit(:user_id, :points, :rows, :level)
             end
         end
     end
