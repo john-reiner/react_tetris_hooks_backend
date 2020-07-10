@@ -3,7 +3,7 @@ module Api
         class ScoresController < ApplicationController
             def index
                 scores = Score.all.order(points: :desc)
-                render json: scores.to_json(except: [:created_at, :updated_at])
+                render json: scores.to_json(:include => {:user => {:only => [:username]}}, except: [:created_at, :updated_at])
             end
 
             def show 
