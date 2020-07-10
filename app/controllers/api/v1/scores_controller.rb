@@ -2,7 +2,7 @@ module Api
     module V1
         class ScoresController < ApplicationController
             def index
-                scores = Score.all
+                scores = Score.all.order(points: :desc)
                 render json: scores.to_json(except: [:created_at, :updated_at])
             end
 
@@ -14,7 +14,7 @@ module Api
             def create
                 score = Score.new(score_params)
 
-                if score.save 
+                if score.save
                     render json: {status: 'SUCCESS', message: 'score Created', data:score},status: :ok
                 else 
                     render json: {status: 'ERROR', message: 'score NOT Created', data:score.errors},status: :unprocessable_entity

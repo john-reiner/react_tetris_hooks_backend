@@ -3,7 +3,7 @@ module Api
         class UsersController < ApplicationController
             def index
                 users = User.all
-                render json: users.to_json(:include => {:scores => {:only => [:score, :rows, :level]}}, except: [:created_at, :updated_at])
+                render json: users.to_json(:include => {:scores => {:only => [:points, :rows, :level]}}, except: [:created_at, :updated_at])
             end
 
             def show 
