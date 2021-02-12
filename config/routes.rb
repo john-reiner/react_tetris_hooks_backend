@@ -4,5 +4,8 @@ Rails.application.routes.draw do
       resources :scores
       resources :users
     end 
+    namespace 'v2' do 
+      resources :users, only: [:create]
+    end
   end 
 end
