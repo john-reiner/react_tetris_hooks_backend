@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end 
     namespace 'v2' do 
       resources :users, only: [:create]
+      resources :scores, only: [:index]
       post '/login', to: 'authentication#login'
     end
   end 
