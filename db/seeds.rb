@@ -6,4 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: 'asdf', password: 'asdf')
+User.create!(
+    username: "testuser1",
+    password: "asdf1"
+)
+
+User.create!(
+    username: "testuser2",
+    password: "asdf2"
+)
+
+10.times do |score|
+    Score.create!(
+        user_id: rand(1..2),
+        points: rand(0..10000),
+        rows: rand(0..100),
+        level: rand(0..10)
+    )
+end
