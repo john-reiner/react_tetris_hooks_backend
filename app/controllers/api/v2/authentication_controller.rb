@@ -11,7 +11,7 @@ module Api
                         user_id: user.id,
                         username: user.username,
                     }, secret_key)
-                    render json: {status: 'success', username: user.username, token: token}
+                    render json: {status: 'success', id: user.id, username: user.username, token: token}
 
                 else 
                     render json: {status: 'error', message: "Unable to verifiy username or password. Please try again."},status: :unauthorized
