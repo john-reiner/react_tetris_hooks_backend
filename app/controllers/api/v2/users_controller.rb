@@ -18,7 +18,7 @@ module Api
             end
 
             def get_user 
-                render json: { user: {id: @user.id, username: @user.username}}
+                render json: {id: @user.id, username: @user.username}
             end
 
             private 
