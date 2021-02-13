@@ -5,7 +5,7 @@ module Api
             def index
                 scores = Score.all.limit(10)
                 user_scores = Score.where(user_id: @user.id)
-                render json: {all_scores: scores, user_scores: user_scores}, :include => :user
+                render json: {all_scores: scores, user_scores: user_scores}, :include => {:user => {:only => [:username]}}
             end
 
             def create
