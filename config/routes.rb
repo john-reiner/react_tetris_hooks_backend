@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       resources :scores, only: [:index]
       post '/login', to: 'authentication#login'
+      get '/getuser', to: 'users#get_user'
     end
   end 
 end
