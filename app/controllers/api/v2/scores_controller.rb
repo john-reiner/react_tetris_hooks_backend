@@ -16,6 +16,10 @@ module Api
                     level: params[:level]
                 )
 
+                if score 
+                    render json: score
+                end 
+
             end
             
         end
