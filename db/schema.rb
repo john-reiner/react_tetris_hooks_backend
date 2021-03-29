@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_120039) do
+ActiveRecord::Schema.define(version: 2021_03_29_121013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "scores", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "points"
     t.integer "rows"
     t.integer "level"
