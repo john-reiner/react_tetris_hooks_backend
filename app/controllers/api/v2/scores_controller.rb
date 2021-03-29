@@ -8,7 +8,7 @@ module Api
 
             def create
                 score = Score.create!(
-                    name: parmas[:name],
+                    name: params[:name],
                     points: params[:points],
                     rows: params[:rows],
                     level: params[:level]
